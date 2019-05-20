@@ -1,0 +1,7 @@
+sudo: required
+services:
+        - docker
+before_install:
+        - docker build -t techouse/test -f Dockerfil.dev .
+script:
+        - docker run techouse/test npm run test -- --coverage 
